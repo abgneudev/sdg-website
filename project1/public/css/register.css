@@ -1,0 +1,649 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+p,label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6, a {
+    font-family: 'Oswald', sans-serif;
+}
+
+h2{
+        font-size: 2rem;
+}
+
+header{
+    width: 100%;
+    position: fixed;
+
+    background-color: white;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.primary-nav{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-areas: 
+        "logo . . . menu menu . . . . . contact"
+    ;
+
+    justify-content: space-between;
+}
+
+.logo{
+    grid-area: logo;
+    padding-left: 13px;
+
+    justify-self: center;
+    align-self: center;
+}
+
+.menu{
+    display: grid;
+    grid-area: menu;
+}
+
+.menu__list {
+    display: flex;
+
+    align-items: center;
+    width: max-content;
+
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+  
+.menu__item {
+    display: flex;
+    align-items: center;
+    height: 55px;
+}
+  
+.menu__main {
+    text-decoration: none;
+    color: black;
+    padding: 0px 21px;
+}
+  
+.menu__water, .menu__land {
+    font-size: 0.89rem;
+    color: black;
+    padding: 0px 13px;
+}
+
+.menu__water, .menu__land, .menu__analytics, .menu__history, .menu__goals{
+    display: flex;
+}
+
+.menu__item:hover {
+    background-color: #f5f5f5;
+}
+
+.submenu {
+    display: none;
+    position: relative;
+    background-color: white;
+    border: 1px solid #ddd;
+    z-index: 1;
+    padding: 21px;
+}
+
+.submenu li{
+    display: flex;
+    flex-direction: column;
+}
+  
+.menu__item:hover .submenu {
+    display: inline-block;
+    animation: dropdown 0.3s ease-in-out forwards;
+}
+  
+.menu__list:hover .submenu {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu__list .submenu {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.contact{
+    grid-area: contact;
+
+    padding: 21px;
+    justify-self: left;
+    align-self: center;
+    width: max-content;
+}
+
+.contact:hover{
+    font-weight: bolder;
+}
+
+.menu__land:hover{
+    color:#56C02B;
+    font-weight: bolder;
+}
+
+.menu__water:hover{
+    color:#0A97D9;
+    font-weight: bolder;
+}
+
+.menu__goals:hover{
+    color:#26BDE2;
+    font-weight: bolder;
+}
+
+.menu__history:hover{
+    color:#A21942;
+    font-weight: bolder;
+}
+
+.menu__analytics:hover{
+    color:#19486A;
+    font-weight: bolder;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+body{
+    background-color: darkslategray;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "heading heading heading heading heading form form form form form form form"
+    ;
+
+    width: 100%;
+    height: 100%; 
+}
+
+.primary{
+    display: grid;
+    grid-area: heading;
+}
+
+h2{
+    text-align: left;
+    padding-left: 55px;
+    margin: 0px;
+    align-self: center;
+
+    color: white;
+}
+
+.form{
+    display: grid;
+    grid-area: form;
+
+    margin-right: 55px;
+}
+
+.registration__form{
+    display: flex;
+    flex-direction: column;
+    padding: 89px 21px 8px 21px;
+    background-color: white;
+    width: max-content;
+}
+
+.form__field{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
+    margin-right: 34px;
+    margin-left: 21px;
+    padding-bottom: 21px;
+}
+
+.form__field__checkbox{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 34px;
+    margin-left: 21px;
+    padding-bottom: 34px;
+}
+
+.form__label{
+    color: darkslategray;
+    padding-bottom: 0px;
+    margin-right: auto;
+    text-align: right;
+    width: max-content;
+}
+
+.form__input{
+    height: 34px;
+    width: 377px;
+    margin-right: 55px;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+.form__field input:focus {
+    outline: none; 
+    border-bottom: 3px solid black;
+}
+
+.form__input__checkbox{
+    height: 21px;
+    width: 21px;
+
+    padding-right: 8px;
+
+    align-items: center;
+}
+
+.form__input__checkbox{
+    padding-left: 8px;
+    align-items: center;
+    justify-self: center;
+}
+
+.form__input__cause{
+    height: 34px;
+    width: 377px;
+
+    padding: 8px;
+    margin-bottom: 8px;
+    margin-right: 55px;
+}
+
+.form__field__message{
+    font-style: italic;
+    font-size: small;
+    padding-top: 21px;
+    color: crimson;
+}
+
+.input__required{
+    color: crimson;
+}
+
+.form__field__submit{
+    padding: 34px 0 34px;
+    text-align: center;
+}
+
+.form__submit{
+    height: 34px;
+    width: 123px;
+    border-radius: 8px;
+
+    background-color: white;
+    color: #1F3B4D;
+    border-width: 2px;
+}
+
+.form__submit:hover{
+    height: 34px;
+    width: 123px;
+
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    background-color: #1F3B4D;
+}
+
+.primary{
+    padding-bottom: 55px;
+}
+
+footer{
+    width: 100%;
+
+    background-color: black;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.footer-nav{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-areas: 
+        "logo . . . . . . social social social social social"
+        "menu menu menu menu menu menu menu menu menu menu menu menu"
+    ;
+    
+}
+
+.footer-logo{
+    padding: 21px;
+}
+
+footer a,h3{
+    color: white;
+}
+
+footer h3{
+    grid-area: social;
+    align-self: center;
+    text-align: right;
+    
+    width: max-content;
+}
+
+.connect__social__media{
+    display: flex;
+    grid-area: social;
+    justify-content: flex-end;
+    align-items: center;
+    list-style-type: none;
+
+    padding-right: 34px;
+}
+
+.connect__heading{
+    width: max-content;
+}
+
+.connect__icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.social__media__icons{
+    display: flex;
+    align-items: center;
+
+    padding-left: 21px;
+}
+
+.important__links{
+    display: flex;
+    grid-area: menu;
+    justify-content: flex-end;
+
+    padding-right: 34px;
+    align-items: center;
+}
+
+.important__links__item{
+    display: flex;
+    width: max-content;
+
+    padding-top: 34px;
+    padding-bottom: 34px;
+}
+
+.important__links__item:not(:last-child)::after {
+    content: "|";
+    margin: 0 34px;
+    color: white; 
+    align-self: center;
+}
+
+@media (min-width: 29rem) and (max-width: 47rem) {
+
+    .primary-nav {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas:
+            "logo . menu menu . . contact";
+    }
+
+    .logo{
+        content: url("/images/E_SDG_logo_without_UN_emblem_square_white_CMYK.jpg");
+    }
+
+    .menu__list {
+        justify-content: center;
+        grid-area: menu;
+    }
+
+    .contact {
+        grid-area: contact;
+        justify-self: end;
+    }
+
+    
+    main{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            ". heading heading heading heading heading heading heading heading heading heading ."
+            ". form form form form form form form form form form ."
+        ;
+
+        width: 100%;
+        height: 100%; 
+
+        padding-top:144px ;
+    }
+
+    .registration__form{
+        justify-content: center;
+    }
+
+    .footer-nav{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "logo . . social social social"
+            "menu menu menu menu menu menu"
+        ;
+        
+    }
+    
+    .footer-logo{
+        content: url(/images/E_SDG_logo_without_UN_emblem_square_CMYK_Transparent.png);
+        padding: 21px;
+        align-self: center;
+    }
+    
+    .connect__social__media{
+        display: flex;
+        flex-direction: column;
+        grid-area: social;
+        align-items: flex-end;
+        list-style-type: none;
+    
+        padding-right: 34px;
+        padding-top: 0px;
+    }
+
+    .connect__icons{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .social__media__icons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        padding-left: 21px;
+    }
+    
+    .important__links{
+        display: flex;
+        grid-area: menu;
+        justify-content: flex-end;
+    
+        padding-right: 34px;
+        align-items: center;
+    }
+    
+    .important__links__item{
+        display: flex;
+    
+        padding-top: 34px;
+        padding-bottom: 34px;
+    }
+    
+    .important__links__item:not(:last-child)::after {
+        content: "|";
+        margin: 0 13px;
+        color: white; 
+        align-self: center;
+    }
+
+}
+
+@media (max-width: 29rem){
+
+    html{
+        font-size: 13px;
+    }
+
+    .primary-nav {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "logo contact"
+            "menu menu"
+            ;
+    }
+
+    .logo{
+        content: url("/images/E_SDG_logo_without_UN_emblem_square_white_CMYK.jpg");
+        justify-self: flex-start;
+    }
+
+    .menu__list {
+        align-self: center;
+        justify-self: center;
+        grid-area: menu;
+    }
+
+    .contact {
+        grid-area: contact;
+        justify-self: end;
+    }
+
+    main{
+        display: grid;
+        grid-template-columns:1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "heading"
+            "form"
+        ;
+
+        width: 100%;
+        height: 100%; 
+
+        padding-top:144px;
+    }
+
+    .primary{
+        padding-bottom: 21px;
+    }
+
+    .registration__form{
+        justify-content: center;
+        max-width: 100%;
+        padding-top: 8px;
+    }
+
+    .form__input{
+        height: 21px;
+        width: 89%;
+        margin-right: 8px;
+        border: none;
+        border-bottom: 1px solid grey;
+    }
+    
+    .form__input__checkbox{
+        height: 8px;
+        width: 8px;
+    }
+    
+    .form__input__checkbox{
+        padding-left: 8px;
+        align-items: center;
+        justify-self: center;
+    }
+    
+    .form__input__cause{
+        height: 34px;
+        width: 89%;
+    
+        padding: 8px;
+        margin-bottom: 8px;
+        margin-right: 55px;
+    }
+
+    .footer-nav{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    
+    .footer-logo{
+        content: url(/images/E_SDG_logo_without_UN_emblem_square_CMYK_Transparent.png);
+        padding: 21px;
+        align-self: center;
+    }
+    
+    footer a,h3{
+        color: white;
+    }
+    
+    .connect__social__media{
+        display: flex;
+        flex-direction: column;
+        grid-area: social;
+        align-items: center;
+        list-style-type: none;
+    
+        padding-right: 34px;
+        padding-top: 0px;
+    }
+
+    .connect__icons{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .social__media__icons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        padding-left: 21px;
+    }
+    
+    .important__links{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    
+        padding-top: 34px;
+        padding-right: 34px;
+        align-items: center;
+    }
+    
+    .important__links__item{
+        display: flex;
+        flex-direction: column;
+    
+        padding-top: 13px;
+        padding-bottom: 13px;
+    }
+    
+    .important__links__item:not(:last-child)::after {
+        content: "";
+        margin: 0 0px;
+        color: white; 
+        align-self: center;
+    }
+}

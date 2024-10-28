@@ -1,0 +1,880 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 21px;
+}
+
+h1, h2, h3, h4, h5, h6, a {
+    font-family: 'Oswald', sans-serif;
+}
+
+h2{
+        font-size: 2rem;
+}
+
+header{
+    width: 100%;
+    position: fixed;
+    z-index: 1597;
+
+    background-color: white;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.primary-nav{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-areas: 
+        "logo . . . menu menu . . . . . contact"
+    ;
+
+    justify-content: space-between;
+}
+
+.logo{
+    grid-area: logo;
+    padding-left: 13px;
+
+    justify-self: center;
+    align-self: center;
+}
+
+.menu{
+    display: grid;
+    grid-area: menu;
+}
+
+.menu__list {
+    display: flex;
+
+    align-items: center;
+    width: max-content;
+
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+  
+.menu__item {
+    display: flex;
+    align-items: center;
+    height: 55px;
+}
+  
+.menu__main {
+    text-decoration: none;
+    color: black;
+    padding: 0px 21px;
+}
+  
+.menu__water, .menu__land {
+    font-size: 0.89rem;
+    color: black;
+    padding: 0px 13px;
+}
+
+.menu__water, .menu__land, .menu__analytics, .menu__history, .menu__goals{
+    display: flex;
+}
+
+.menu__item:hover {
+    background-color: #f5f5f5;
+}
+
+.submenu {
+    display: none;
+    position: relative;
+    background-color: white;
+    border: 1px solid #ddd;
+    z-index: 1;
+    padding: 21px;
+}
+
+.submenu li{
+    display: flex;
+    flex-direction: column;
+}
+  
+.menu__item:hover .submenu {
+    display: inline-block;
+    animation: dropdown 0.3s ease-in-out forwards;
+}
+  
+.menu__list:hover .submenu {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu__list .submenu {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.contact{
+    grid-area: contact;
+
+    padding: 21px;
+    justify-self: left;
+    align-self: center;
+    width: max-content;
+}
+
+.contact:hover{
+    font-weight: bolder;
+}
+
+.menu__land:hover{
+    color:#56C02B;
+    font-weight: bolder;
+}
+
+.menu__water:hover{
+    color:#0A97D9;
+    font-weight: bolder;
+}
+
+.menu__goals:hover{
+    color:#26BDE2;
+    font-weight: bolder;
+}
+
+.menu__history:hover{
+    color:#A21942;
+    font-weight: bolder;
+}
+
+.menu__analytics:hover{
+    color:#19486A;
+    font-weight: bolder;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: 
+        "heading heading heading heading heading picture picture picture picture picture picture picture"
+        "description description description description description description more-info more-info more-info more-info more-info more-info"
+        "sdg-animal-heading sdg-animal-heading sdg-animal-heading sdg-animal-heading sdg-animal-heading . . . . . . ."
+        "water water water water water water land land land land land land"
+        "news news news news news news news news news news news news"
+    ;
+
+    max-width: 100%;
+}
+
+.flop__primary{
+    display: grid;
+    grid-area: heading;
+    max-width: 100%;
+
+    padding: 89px 55px 55px 55px;
+    justify-items: center;
+}
+
+.flop__primary h1{
+    font-size: 3.7rem;
+    color: black;
+    text-align: left;
+    align-self: center;
+}
+
+.flop__secondary{
+    display: grid;
+    grid-area: picture;
+    width: fit-content;
+    max-width: 100%;
+    overflow: hidden;
+
+    padding: 89px 0px 55px 34px;
+}
+
+.flop__image{
+    height: auto;
+    width: 89%;
+    max-width: 100%;
+}
+
+.description{
+    display: grid;
+    grid-area: description;
+    max-width: 100%;
+
+    padding: 55px 8px 55px 55px;
+}
+
+.more-info{
+    display: grid;
+    grid-area: more-info;
+    align-items: center;
+    max-width: 100%;
+}
+
+.info__content{
+    display: flex;
+    text-align: right;
+    padding: 21px 55px 21px 55px;
+}
+
+.sdg__animals{
+    display: grid;
+    grid-area: sdg-animal-heading;
+    max-width: 100%;
+
+    padding: 55px 0px 21px 55px;
+}
+
+.water__card{
+    display: grid;
+    grid-area: water;
+    max-width: 100%;
+}
+
+.water__card__default{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: left;
+    height: 100%;
+    max-width: 100%;
+
+    background-color: #0A97D9;
+    padding: 55px 55px;
+
+    height: 377px;
+    color: white;
+}
+
+.water__card__default p{
+    padding-top: 55px;
+    font-size: 18px;
+}
+
+.water__card img{
+    height: 144px;
+    width: 144px;
+}
+
+.water__card__hover {
+    opacity: 0;
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+
+    background-color: white;
+    padding: 55px 55px;
+
+    height: 377px;
+    color:#0A97D9;
+
+    border: 8px solid #0A97D9;
+    width: 50%;
+    z-index: 0;
+}
+
+.card__content__list{
+    display: flex;
+    
+    padding: 0px 34px 0px 0px; 
+}
+.card__content{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 0px 13px;
+    width: 100%;
+}
+
+.water__card__hover h3{
+    color:#0A97D9;
+    font-size: 2rem;
+}
+
+.water__card:hover .water__card__hover {
+    opacity: 1;
+    transition: opacity 0.21s ease-in-out;
+    z-index: 0;
+}
+
+.water__card:hover .water__card__default {
+    opacity: 0;
+}
+
+.land__card{
+    display: grid;
+    grid-area: land;
+    max-width: 100%;
+}
+
+.land__card__default{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: left;
+
+    background-color: #56C02B;
+    padding: 55px 55px;
+
+    height: 377px;
+    color: white;
+}
+
+.land__card__default p{
+    padding-top: 55px;
+    font-size: 18px;
+}
+
+.land__card img{
+    height: 144px;
+    width: 144px;
+}
+
+.land__card__hover {
+    opacity: 0;
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    height: 100%;
+
+    background-color: white;
+    padding: 55px 55px;
+
+    height: 377px;
+    color:#56C02B;
+
+    border: 8px solid #56C02B;
+    width: 50%;
+    z-index: 0;
+}
+
+.land__card__hover h3{
+    color: #56C02B;
+    font-size: 2rem;
+}
+
+.land__card:hover .land__card__hover {
+    opacity: 1;
+    transition: opacity 0.21s ease-in-out;
+    z-index: 0;
+}
+
+.land__card:hover .land__card__default {
+    opacity: 0;
+}
+
+.news{
+    display: grid;
+    grid-area: news;
+    max-width: 100%;
+}
+
+.news h2{
+    padding: 55px 0px 0px 55px;
+}
+
+.sdg__news__list{
+    display: flex;
+    padding: 34px 21px 34px 21px;
+}
+
+.news__card{
+    display: grid;
+    grid-template-rows: auto 0.21fr 0.55fr 1fr 0.21fr;
+
+    margin: 8px;
+    padding: 8px;
+
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+}
+
+.news__card:hover{
+    display: grid;
+    grid-template-rows: auto 0.21fr 0.55fr 1fr 0.21fr;
+
+    margin: 8px;
+    padding: 8px;
+
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+
+    background-color: #A21942;
+    color: white;
+}
+
+.news__card:hover h3{
+    color: white;
+}
+
+.news__card:hover .more__info{
+    color:aqua;
+}
+
+.news__card p{
+    font-size: 15px;
+    padding: 8px 13px;
+}
+
+.news__card h3{
+    color: black;
+    font-size: 21px;
+    padding: 8px 13px;
+}
+
+.card__picture {
+    width: 100%;
+    height: 233px; 
+    border-radius: 8px; 
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 5px solid black;
+}
+
+.more__info{
+    padding-top: 55px;
+    font-weight: bold;
+    padding: 8px 13px;
+}
+
+footer{
+    width: 100%;
+
+    background-color: black;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.footer-nav{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-areas: 
+        "logo . . . . . . social social social social social"
+        "menu menu menu menu menu menu menu menu menu menu menu menu"
+    ;
+    
+}
+
+.footer-logo{
+    padding: 21px;
+}
+
+footer a,h3{
+    color: white;
+}
+
+footer h3{
+    grid-area: social;
+    align-self: center;
+    text-align: right;
+    
+    width: max-content;
+}
+
+.connect__social__media{
+    display: flex;
+    grid-area: social;
+    justify-content: flex-end;
+    align-items: center;
+    list-style-type: none;
+
+    padding-right: 34px;
+}
+
+.connect__heading{
+    width: max-content;
+}
+
+.connect__icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.social__media__icons{
+    display: flex;
+    align-items: center;
+
+    padding-left: 21px;
+}
+
+.important__links{
+    display: flex;
+    grid-area: menu;
+    justify-content: flex-end;
+
+    padding-right: 34px;
+    align-items: center;
+}
+
+.important__links__item{
+    display: flex;
+    width: max-content;
+
+    padding-top: 34px;
+    padding-bottom: 34px;
+}
+
+.important__links__item:not(:last-child)::after {
+    content: "|";
+    margin: 0 34px;
+    color: white; 
+    align-self: center;
+}
+
+@media (min-width: 29rem) and (max-width: 47rem) {
+
+    .primary-nav {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas:
+            "logo . menu menu . . contact";
+    }
+
+    .logo{
+        content: url("/images/E_SDG_logo_without_UN_emblem_square_white_CMYK.jpg");
+    }
+
+    .menu__list {
+        justify-content: center;
+        grid-area: menu;
+    }
+
+    .contact {
+        grid-area: contact;
+        justify-self: end;
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: auto auto auto auto auto auto auto auto;
+        grid-template-areas: 
+            "heading heading heading heading heading heading"
+            "picture picture picture picture picture picture"
+            "description description description description description description"
+            "more-info more-info more-info more-info more-info more-info"
+            "sdg-animal-heading sdg-animal-heading sdg-animal-heading sdg-animal-heading sdg-animal-heading sdg-animal-heading"
+            "water water water water water water"
+            "land land land land land land"
+            "news news news news news news"
+        ;
+    }
+
+    .flop__primary{
+        display: grid;
+        grid-area: heading;
+    
+        padding: 89px 21px 21px 21px;
+        justify-items: center;
+    }
+
+    .flop__primary h1{
+        text-align: center;
+    }
+
+    .flop__secondary{
+        display: grid;
+        grid-area: picture;
+
+        justify-self: center;
+    }
+
+    .flop__image{
+        height: 322px;
+        width: 521px;
+
+        justify-self: center;
+    }
+    
+    .description{
+        text-align: center;
+    }
+    
+    .info__content{
+        text-align: center;
+    }
+
+    .water__card__hover {
+        width: 100%;
+    }
+
+    .land__card__hover {
+        width: 100%;
+    }
+
+    .sdg__news__list{
+        display: flex;
+        flex-direction: column;
+        padding: 34px 21px 34px 21px;
+    }
+    
+    .footer-nav{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "logo . . social social social"
+            "menu menu menu menu menu menu"
+        ;
+        
+    }
+    
+    .footer-logo{
+        content: url(/images/E_SDG_logo_without_UN_emblem_square_CMYK_Transparent.png);
+        padding: 21px;
+        align-self: center;
+    }
+    
+    .connect__social__media{
+        display: flex;
+        flex-direction: column;
+        grid-area: social;
+        align-items: flex-end;
+        list-style-type: none;
+    
+        padding-right: 34px;
+        padding-top: 0px;
+    }
+
+    .connect__icons{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .social__media__icons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        padding-left: 21px;
+    }
+    
+    .important__links{
+        display: flex;
+        grid-area: menu;
+        justify-content: flex-end;
+    
+        padding-right: 34px;
+        align-items: center;
+    }
+    
+    .important__links__item{
+        display: flex;
+    
+        padding-top: 34px;
+        padding-bottom: 34px;
+    }
+    
+    .important__links__item:not(:last-child)::after {
+        content: "|";
+        margin: 0 13px;
+        color: white; 
+        align-self: center;
+    }
+
+}
+
+@media (max-width: 29rem){
+    .primary-nav {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "logo contact"
+            "menu menu"
+            ;
+    }
+
+    .logo{
+        content: url("/images/E_SDG_logo_without_UN_emblem_square_white_CMYK.jpg");
+        justify-self: flex-start;
+    }
+
+    .menu__list {
+        align-self: center;
+        justify-self: center;
+        grid-area: menu;
+    }
+
+    .contact {
+        grid-area: contact;
+        justify-self: end;
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: auto auto auto auto auto auto auto auto;
+        grid-template-areas: 
+            "heading heading heading"
+            "picture picture picture"
+            "description description description"
+            "more-info more-info more-info"
+            "sdg-animal-heading sdg-animal-heading sdg-animal-heading"
+            "water water water"
+            "land land land"
+            "news news news"
+        ;
+    }
+
+    .flop__primary{
+        display: grid;
+        grid-area: heading;
+    
+        padding: 18px 21px 21px 21px;
+        justify-items: center;
+    }
+
+    .flop__primary h1{
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .flop__secondary{
+        display: grid;
+        grid-area: picture;
+    }
+
+    .flop__image{
+        height: 199px;
+        width: 288px;
+
+        justify-self: center;
+    }
+    
+    .description{
+        text-align: center;
+    }
+    
+    .info__content{
+        text-align: center;
+    }
+
+    .card__content__list{
+        display: flex;
+        flex-direction: column;
+        
+        padding-right: 8px; 
+    }
+
+    .card__content{
+        display: flex;
+        flex-direction: column;
+    
+        align-items: center;
+    
+        padding: 0px 13px;
+        width: 100%;
+    }
+
+    .water__card__hover {
+        width: 100%;
+        padding: 8px 8px;
+        border: 8px solid #0A97D9;
+    }
+
+    .land__card__hover {
+        width: 100%;
+        padding: 8px 8px;
+        border: 8px solid #56C02B;
+    }
+
+    .water__card__hover h3{
+        color:#0A97D9;
+        font-size: 1rem;
+    }
+
+    .land__card__hover h3{
+        color:#56C02B;
+        font-size: 1rem;
+    }
+    
+    .sdg__news__list{
+        display: flex;
+        flex-direction: column;
+        padding: 34px 21px 34px 21px;
+    }
+    
+    .footer-nav{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    
+    .footer-logo{
+        content: url(/images/E_SDG_logo_without_UN_emblem_square_CMYK_Transparent.png);
+        padding: 21px;
+        align-self: center;
+    }
+    
+    footer a,h3{
+        color: white;
+    }
+    
+    .connect__social__media{
+        display: flex;
+        flex-direction: column;
+        grid-area: social;
+        align-items: center;
+        list-style-type: none;
+    
+        padding-right: 34px;
+        padding-top: 0px;
+    }
+
+    .connect__icons{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .social__media__icons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        padding-left: 21px;
+    }
+    
+    .important__links{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    
+        padding-top: 34px;
+        padding-right: 34px;
+        align-items: center;
+    }
+    
+    .important__links__item{
+        display: flex;
+        flex-direction: column;
+    
+        padding-top: 13px;
+        padding-bottom: 13px;
+    }
+    
+    .important__links__item:not(:last-child)::after {
+        content: "";
+        margin: 0 0px;
+        color: white; 
+        align-self: center;
+    }
+}

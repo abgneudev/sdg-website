@@ -1,0 +1,1116 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 21px;
+}
+
+h1, h2, h3, h4, h5, h6, a {
+    font-family: 'Oswald', sans-serif;
+}
+
+h2{
+        font-size: 2rem;
+}
+
+header{
+    width: 100%;
+    position: fixed;
+    z-index: 1597;
+
+    background-color: white;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.primary-nav{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-areas: 
+        "logo . . . menu menu . . . . . contact"
+    ;
+
+    justify-content: space-between;
+}
+
+.logo{
+    grid-area: logo;
+    padding-left: 13px;
+
+    justify-self: center;
+    align-self: center;
+}
+
+.menu{
+    display: grid;
+    grid-area: menu;
+}
+
+.menu__list {
+    display: flex;
+
+    align-items: center;
+    width: max-content;
+
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+  
+.menu__item {
+    display: flex;
+    align-items: center;
+    height: 55px;
+}
+  
+.menu__main {
+    text-decoration: none;
+    color: black;
+    padding: 0px 21px;
+}
+  
+.menu__water, .menu__land {
+    font-size: 0.89rem;
+    color: black;
+    padding: 0px 13px;
+}
+
+.menu__water, .menu__land, .menu__analytics, .menu__history, .menu__goals{
+    display: flex;
+}
+
+.menu__item:hover {
+    background-color: #f5f5f5;
+}
+
+.submenu {
+    display: none;
+    position: relative;
+    background-color: white;
+    border: 1px solid #ddd;
+    z-index: 1;
+    padding: 21px;
+}
+
+.submenu li{
+    display: flex;
+    flex-direction: column;
+}
+  
+.menu__item:hover .submenu {
+    display: inline-block;
+    animation: dropdown 0.3s ease-in-out forwards;
+}
+  
+.menu__list:hover .submenu {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu__list .submenu {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.contact{
+    grid-area: contact;
+
+    padding: 21px;
+    justify-self: left;
+    align-self: center;
+    width: max-content;
+}
+
+.contact:hover{
+    font-weight: bolder;
+}
+
+.menu__land:hover{
+    color:#56C02B;
+    font-weight: bolder;
+}
+
+.menu__water:hover{
+    color:#0A97D9;
+    font-weight: bolder;
+}
+
+.menu__goals:hover{
+    color:#26BDE2;
+    font-weight: bolder;
+}
+
+.menu__history:hover{
+    color:#A21942;
+    font-weight: bolder;
+}
+
+.menu__analytics:hover{
+    color:#19486A;
+    font-weight: bolder;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: 
+        "flop-content flop-content flop-content flop-content flop-content flop-content flop-content logo logo logo logo logo"
+        "description description description description description description action action action action action action"
+        "side-note side-note side-note side-note side-note side-note side-note side-note side-note side-note side-note side-note"
+        "target target target target target target target target target target target target"
+        "to-do to-do to-do to-do to-do to-do to-do to-do to-do to-do to-do to-do"
+    ;
+
+    width: 100%;
+}
+
+
+.flop__primary{
+    display: grid;
+    grid-area: flop-content;
+
+    align-items: center;
+
+    background-color: #56C02B;
+}
+
+.flop__heading{
+    display: flex;
+
+    align-items: center;
+    padding: 144px 34px 55px 55px;
+}
+
+.flop__heading h1{
+    padding-left: 8px;
+
+    font-size: 3rem;
+    color: white;
+}
+
+.flop__heading h2{
+    font-size: 3rem;
+    color: #105702;
+}
+
+.flop__content__list{
+    padding: 0px 34px 89px 55px;
+}
+
+.flop__content{
+    display: flex;
+    padding: 8px 0px;
+
+    color: white;
+    font-size: 1rem;
+}
+
+.flop__secondary{
+    display: grid;
+    grid-area: logo;
+
+    background-color: #56C02B;
+}
+
+.flop__logo{
+    height: 233px;
+    width: 233px;
+
+    align-self: center;
+    justify-self: center;
+
+    border: 3px solid white;
+}
+
+.sdg__tagline{
+    display: grid;
+    grid-area: description;
+
+    padding: 55px 0px 89px 55px;
+}
+
+.sdg__tagline h2{
+    font-size: 2rem;
+}
+
+.action{
+    display: grid;
+    grid-area: action;
+}
+
+.action__info{
+    padding: 55px 34px 89px 21px;
+    overflow-x: hidden;
+}
+
+.action__content{
+    display: flex;
+    text-align: right;
+    justify-content: flex-end;
+
+
+    font-size: 1rem;
+}
+
+.action__prompt{
+    display: flex;
+    justify-content: flex-end;
+
+    padding-top: 21px;
+}
+
+.action__prompt h2{
+    color: #56C02B;
+}
+
+.action__links{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.action__list{
+    display: flex;
+    padding: 8px 0px 21px;
+}
+
+.action__steps{
+    display: flex;
+    margin: 3px;
+}
+
+.action__buttons{
+    padding: 8px 21px;
+    border: 2px solid #56C02B;
+
+    align-self: center;
+    width: max-content;
+}
+
+.action__buttons:hover{
+    background-color: #56C02B;
+    color: white;
+}
+
+.side__note{
+    display: grid;
+    grid-area: side-note;
+    width: max-content;
+
+    font-size: 26px;
+    padding: 0px 0px 55px 55px;
+}
+
+.sdg__targets{
+    display: grid;
+    grid-area: target;
+
+    padding: 0px 55px 55px 0px;
+}
+
+.sdg__targets__list {
+    list-style-type: none;
+}
+
+.sdg__target__item{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+    font-size: 1rem;
+}
+
+.sdg__target__item1{
+    display: flex;
+    align-items: center;
+
+    font-size: 1rem;
+}
+
+.sdg__target__content h3{  
+    padding: 8px 21px; 
+   
+    color: black;
+    width: max-content;
+    justify-self: center;
+    border: 3px solid #56C02B;
+    margin: 0px;
+}
+
+.sdg__target__item{
+    text-align: left;
+    padding-left: 34px;
+}
+
+.sdg__target__item1{
+    text-align: right;
+    justify-self: center;
+    padding-right: 34px;
+}
+
+.sdg__target__picture{
+    height: 377px;
+    width: 610px;
+
+    margin: 55px 0px 21px 55px; 
+}
+
+.sdg__target__picture1{
+    height: 377px;
+    width: 610px;
+
+    margin: 55px 55px 21px 0px; 
+}
+
+.to__do__list{
+    display: grid;
+    grid-area: to-do;
+
+    padding: 21px 55px 21px 55px;
+}
+
+.things__to__do{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    padding: 21px 0px 55px 0px;
+}
+
+.to__do__card{
+    display: flex;
+    width: 100%;
+    padding: 8px 55px 8px 55px;
+
+    align-self: center;
+}
+
+.to__do__card p{
+    align-self: center;
+}
+
+.idea{
+    height: 55px;
+    width: 55px;
+    padding: 8px;
+
+    align-self: center;
+}
+
+footer{
+    width: 100%;
+
+    background-color: black;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.footer-nav{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-areas: 
+        "logo . . . . . . social social social social social"
+        "menu menu menu menu menu menu menu menu menu menu menu menu"
+    ;
+    
+}
+
+.footer-logo{
+    padding: 21px;
+}
+
+footer a,h3{
+    color: white;
+}
+
+footer h3{
+    grid-area: social;
+    align-self: center;
+    text-align: right;
+    
+    width: max-content;
+}
+
+.connect__social__media{
+    display: flex;
+    grid-area: social;
+    justify-content: flex-end;
+    align-items: center;
+    list-style-type: none;
+
+    padding-right: 34px;
+}
+
+.connect__heading{
+    width: max-content;
+}
+
+.connect__icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.social__media__icons{
+    display: flex;
+    align-items: center;
+
+    padding-left: 21px;
+}
+
+.important__links{
+    display: flex;
+    grid-area: menu;
+    justify-content: flex-end;
+
+    padding-right: 34px;
+    align-items: center;
+}
+
+.important__links__item{
+    display: flex;
+    width: max-content;
+
+    padding-top: 34px;
+    padding-bottom: 34px;
+}
+
+.important__links__item:not(:last-child)::after {
+    content: "|";
+    margin: 0 34px;
+    color: white; 
+    align-self: center;
+}
+
+@media (min-width: 29rem) and (max-width: 47rem) {
+
+    * {
+        box-sizing: border-box;
+        margin: 0px;
+    }
+    
+    p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 21px;
+    }
+    
+    h1, h2, h3, h4, h5, h6, a {
+        font-family: 'Oswald', sans-serif;
+    }
+    
+    header{
+        width: 100%;
+        position: fixed;
+    
+        background-color: white;
+        box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .primary-nav {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas:
+            "logo . menu menu . . contact";
+    }
+
+    .logo{
+        content: url("/images/E_SDG_logo_without_UN_emblem_square_white_CMYK.jpg");
+    }
+
+    .menu__list {
+        justify-content: center;
+        grid-area: menu;
+    }
+
+    .contact {
+        grid-area: contact;
+        justify-self: end;
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: 
+            "flop-content flop-content flop-content flop-content flop-content flop-content"
+            "logo logo logo logo logo logo"
+            "description description description description description description"
+            "action action action action action action"
+            "side-note side-note side-note side-note side-note side-note"
+            "target target target target target target"
+            "to-do to-do to-do to-do to-do to-do"
+        ;
+    
+        width: 100%;
+    }
+    
+    .flop__primary{
+        justify-items: center;
+    }
+    
+    .flop__content{
+        display: flex;
+        padding: 8px 0px;
+    
+        color: white;
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .flop__secondary{
+        display: grid;
+        grid-area: logo;
+        padding-bottom: 89px;
+        justify-items: center;
+    
+        background-color: #56C02B;
+    }
+    
+    .flop__logo{
+        height: 233px;
+        width: 233px;
+    
+        align-self: center;
+        justify-self: center;
+    
+        border: 3px solid white;
+    }
+
+    .sdg__tagline{
+        text-align: center;
+        padding: 55px 21px 21px 21px;
+    }
+
+    .action__content{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    
+    
+        font-size: 1rem;
+    }
+
+    .action__prompt{
+        display: flex;
+        justify-content: center;
+    
+        padding-top: 21px;
+    }
+    
+    .action__links{
+        justify-content: center;
+    }
+
+    .action__list{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .action__steps{
+        display: flex;
+        justify-content: center;
+        margin: 3px;
+    }
+
+    .action__buttons{
+        text-align: center;
+        width: 144px;
+    }
+
+    .side__note{
+        padding-left: 21px;
+    }
+
+    .side__note p{
+        font-size: 1rem;
+    }
+
+    .sdg__targets{
+        display: grid;
+        grid-area: target;
+    
+        padding: 0px 34px 34px 0px;
+    }
+    
+    .sdg__targets__list {
+        list-style-type: none;
+    }
+
+    .sdg__target__item p, .sdg__target__item1 p{
+
+        font-size: 0.89rem;
+    }
+    
+    .sdg__target__content h3{  
+        padding: 5px 13px; 
+        border: 2px solid #56C02B;
+        font-size: 1rem;
+    }
+    
+    .sdg__target__item{
+        text-align: left;
+        padding-left: 8px;
+        padding-bottom: 55px;
+    }
+    
+    .sdg__target__item1{
+        text-align: right;
+        justify-self: center;
+        padding-right: 8px;
+        padding-bottom: 55px;
+    }
+    
+    .sdg__target__picture{
+        height: 144px;
+        width: 233px;
+    
+        margin: 21px 0px 8px 21px; 
+    }
+    
+    .sdg__target__picture1{
+        height: 144px;
+        width: 233px;
+    
+        margin: 21px 21px 8px 0px; 
+    }
+
+    .to__do__card{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 8px 21px 8px 21px;
+    
+        align-self: center;
+        text-align: center;
+    }
+
+    .to__do__card p{
+        font-size: 0.89rem;
+    }
+    
+    .idea{
+        height: 55px;
+        width: 55px;
+        padding: 8px;
+    
+        align-self: center;
+    }
+
+    footer{
+        width: 100%;
+    
+        background-color: black;
+        box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+    }
+    
+    .footer-nav{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "logo . . social social social"
+            "menu menu menu menu menu menu"
+        ;
+        
+    }
+    
+    .footer-logo{
+        content: url(/images/E_SDG_logo_without_UN_emblem_square_CMYK_Transparent.png);
+        padding: 21px;
+        align-self: center;
+    }
+    
+    footer a,h3{
+        color: white;
+    }
+    
+    .connect__social__media{
+        display: flex;
+        flex-direction: column;
+        grid-area: social;
+        align-items: flex-end;
+        list-style-type: none;
+    
+        padding-right: 34px;
+        padding-top: 0px;
+    }
+
+    .connect__icons{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .social__media__icons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        padding-left: 21px;
+    }
+    
+    .important__links{
+        display: flex;
+        grid-area: menu;
+        justify-content: flex-end;
+    
+        padding-right: 34px;
+        align-items: center;
+    }
+    
+    .important__links__item{
+        display: flex;
+    
+        padding-top: 34px;
+        padding-bottom: 34px;
+    }
+    
+    .important__links__item:not(:last-child)::after {
+        content: "|";
+        margin: 0 13px;
+        color: white; 
+        align-self: center;
+    }
+
+}
+
+@media (max-width: 29rem){
+    * {
+        box-sizing: border-box;
+        margin: 0px;
+    }
+    
+    p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 21px;
+    }
+    
+    h1, h2, h3, h4, h5, h6, a {
+        font-family: 'Oswald', sans-serif;
+    }
+    
+    header{
+        width: 100%;
+        position: fixed;
+    
+        background-color: white;
+        box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .primary-nav {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "logo contact"
+            "menu menu"
+            ;
+    }
+
+    .logo{
+        content: url("/images/E_SDG_logo_without_UN_emblem_square_white_CMYK.jpg");
+        justify-self: flex-start;
+    }
+
+    .menu__list {
+        align-self: center;
+        justify-self: center;
+        grid-area: menu;
+    }
+
+    .contact {
+        grid-area: contact;
+        justify-self: end;
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: 
+            "flop-content flop-content flop-content"
+            "logo logo logo"
+            "description description description"
+            "action action action"
+            "side-note side-note side-note"
+            "target target target"
+            "to-do to-do to-do"
+        ;
+        
+        padding-top: 55px;
+        width: 100%;
+    }
+    
+    .flop__primary{
+        justify-items: center;
+    }
+
+    .flop__heading{
+        width: max-content;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .flop__heading h1{
+        font-size: 2rem;
+    }
+
+    .flop__heading h2{
+        font-size: 2rem;
+    }
+
+    .flop__content__list{
+        padding: 0px 5px px 5px;
+    }
+    
+    .flop__content p{
+        display: flex;
+        padding: 2px 0px;
+    
+        color: white;
+        font-size: 0.89rem;
+        text-align: center;
+    }
+    
+    .flop__secondary{
+        display: grid;
+        grid-area: logo;
+        padding-bottom: 89px;
+        justify-items: center;
+    
+        background-color: #56C02B;
+    }
+    
+    .flop__logo{
+        height: 233px;
+        width: 233px;
+    
+        align-self: center;
+        justify-self: center;
+    
+        border: 3px solid white;
+    }
+
+    .sdg__tagline{
+        text-align: center;
+        padding: 13px 5px 13px 13px;
+    }
+
+    .sdg__tagline h2{
+        font-size: 0.89rem;
+    }
+
+    .action__content{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .action__content p{
+        font-size: 0.89rem;
+    }
+
+    .action__prompt{
+        display: flex;
+        justify-content: center;
+    
+        padding-top: 21px;
+    }
+    
+    .action__links{
+        justify-content: center;
+    }
+
+    .action__list{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .action__steps{
+        display: flex;
+        justify-content: center;
+        margin: 3px;
+    }
+
+    .action__buttons{
+        text-align: center;
+        width: 144px;
+    }
+
+    .side__note{
+        padding: 8px;
+        width: fit-content;
+    }
+    
+    .side__note p{
+        font-size: 0.89rem;
+        text-align: center;
+    }
+
+    .sdg__targets{
+        display: grid;
+        grid-area: target;
+    
+        padding: 0px 34px 34px 0px;
+    }
+    
+    .sdg__targets__list {
+        list-style-type: none;
+    }
+
+    .sdg__target__item, .sdg__target__item1{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sdg__target__item p, .sdg__target__item1 p{
+        font-size: 0.89rem;
+        text-align: center;
+    }
+    
+    .sdg__target__content h3{  
+        padding: 5px 13px; 
+        border: 2px solid #56C02B;
+        font-size: 1rem;
+
+        justify-self: center;
+    }
+    
+    .sdg__target__item{
+        text-align: left;
+        padding-left: 8px;
+        padding-bottom: 55px;
+    }
+    
+    .sdg__target__item1{
+        text-align: right;
+        justify-self: center;
+        padding-right: 8px;
+        padding-bottom: 55px;
+    }
+    
+    .sdg__target__picture{
+        height: 144px;
+        width: 233px;
+    
+        margin: 21px 0px 8px 21px; 
+    }
+    
+    .sdg__target__picture1{
+        height: 144px;
+        width: 233px;
+    
+        margin: 21px 21px 8px 0px; 
+    }
+
+    .things__to__do{
+        display: grid;
+        grid-template-columns: 1fr;
+    
+        padding: 21px 0px 55px 0px;
+    }
+
+    .to__do__list h2{
+        text-align: center;
+    }
+
+    .to__do__card{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 8px 21px 8px 21px;
+    
+        align-self: center;
+        text-align: center;
+    }
+
+    .to__do__card p{
+        font-size: 0.89rem;
+    }
+    
+    .idea{
+        height: 55px;
+        width: 55px;
+        padding: 8px;
+    
+        align-self: center;
+    }
+
+    footer{
+        width: 100%;
+    
+        background-color: black;
+        box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+    }
+    
+    .footer-nav{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    
+    .footer-logo{
+        content: url(/images/E_SDG_logo_without_UN_emblem_square_CMYK_Transparent.png);
+        padding: 21px;
+        align-self: center;
+    }
+    
+    footer a,h3{
+        color: white;
+    }
+    
+    .connect__social__media{
+        display: flex;
+        flex-direction: column;
+        grid-area: social;
+        align-items: center;
+        list-style-type: none;
+    
+        padding-right: 34px;
+        padding-top: 0px;
+    }
+
+    .connect__icons{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .social__media__icons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        padding-left: 21px;
+    }
+    
+    .important__links{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    
+        padding-top: 34px;
+        padding-right: 34px;
+        align-items: center;
+    }
+    
+    .important__links__item{
+        display: flex;
+        flex-direction: column;
+    
+        padding-top: 13px;
+        padding-bottom: 13px;
+    }
+    
+    .important__links__item:not(:last-child)::after {
+        content: "";
+        margin: 0 0px;
+        color: white; 
+        align-self: center;
+    }
+}

@@ -1,0 +1,4 @@
+#following files will be ignored
+
+node_modules
+package-lock.json
