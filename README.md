@@ -4,7 +4,7 @@
 
 This project is a multi-page website about an animal of choice, created to demonstrate HTML, CSS, and responsive design skills. The website consists of multiple HTML pages and related CSS to structure and style the content.
 
-Video Walk through: [[(Video)](https://drive.google.com/file/d/1ajrwoKQbtrYTP1wBSnNDW3rXulznS7f6/view?usp=sharing)]
+Video Walk through: [[Video](https://drive.google.com/file/d/1ajrwoKQbtrYTP1wBSnNDW3rXulznS7f6/view?usp=sharing)]
 
 ## How to Run the Website
 
