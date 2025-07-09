@@ -1,7 +1,5 @@
 # SDG Awareness Website
 
-![SDG Logo](public/images/E_SDG_logo_without_UN_emblem_horizontal_CMYK_Transparent.png)
-
 A responsive web application dedicated to raising awareness about the United Nations Sustainable Development Goals (SDGs), specifically focusing on **SDG 14: Life Below Water** and **SDG 15: Life on Land**.
 
 Video Walk through: [[Video](https://drive.google.com/file/d/1ajrwoKQbtrYTP1wBSnNDW3rXulznS7f6/view?usp=sharing)]
